@@ -42,17 +42,17 @@ const proofItems = [
   },
   {
     icon: Buildings,
-    title: '集采中选',
+    title: '全国医疗采购挂网，医保集齐采，招标配备',
     detail: '京进冀止血资料集中带量采购（全国执行）',
   },
 ]
 
 const companyHonors = [
-  '军队科学技术进步奖一等奖（战伤止血）',
+  '获2020年军队科学技术进步奖一等奖（战伤止血）',
   '陕西省科技创新重大项目',
   '陕西省“13115”重大科技项目',
   '国家发改委高技术产业化项目',
-  'NMPA 的 CA 认证（2020）',
+  'NMPA 的 CA 认证',
   '国家医保医用耗材分类代码',
 ]
 
@@ -64,8 +64,8 @@ const institutionalDeployments = [
   '陕西省公安警务列配目录并配备',
   '国家西部药品动员中心储备目录',
   '陕西省教育厅针对陕西省各学校的安全问题发文推荐',
-  '陕西省应急配备目录（2022年 - 至今）',
-  '黑龙江省100个旅游景点应急站配备（2023年）',
+  '入选陕西省应急配备目录并储备',
+  '黑龙江省100个旅游景点应急站配备',
 ]
 
 const reliefSupport = [
@@ -86,11 +86,11 @@ const mechanism = [
   },
   {
     title: '压迫止血作用',
-    text: '按压在创面处，覆盖创面与空气隔离，并通过物理压迫使血液快速凝结',
+    text: '按压在创面处，覆盖创面与空气隔离，并通过物理压迫使血液快速凝结，让药物组方与创面紧贴发挥作用。',
   },
   {
     title: '生物活性药物作用',
-    text: '抑制纤溶发生，帮助防止凝血块溶解，形成完整的三重止血机理，调动凝血因子，促进纤维蛋白原转化为纤维蛋白，加快血液凝固。',
+    text: '调动人自身凝血因子，促进纤维蛋白原转化为纤维蛋白，加快血液凝固。并抑制纤溶发生，帮助防止凝血块溶解，形成完整的三重止血机理，调动凝血因子，促进纤维蛋白原转化为纤维蛋白，加快血液凝固。',
   },
 ]
 
@@ -98,21 +98,18 @@ const hemostasisSizes = ['9.5×8.0cm', '5.0×4.0cm', '8.0×3.0cm', '10.0×1.5cm'
 
 const hemostasisDetails = [
   {
-    heading: '注册与许可',
+    heading: '注册与许可（NMDA）',
     facts: [
       ['管理类别', 'Ⅲ类医疗器械'],
-      ['产品技术要求', '国械注准20153140973'],
-      ['发明专利', 'ZL 2005 1 0096239.4'],
-      ['批准日期', '2025年6月23日'],
-      ['有效期至', '2030年6月22日'],
+      ['注册号', '国械注准20153140973'],
     ],
   },
   {
     heading: '型号规格',
     wide: true,
     groups: [
-      { title: 'Ⅰ型（含透气胶层）', meta: '浅红色包装，OTC产品（院外急救）', items: hemostasisSizes },
-      { title: 'Ⅱ型（无胶层）', meta: '浅蓝色包装，临床产品（院内手术）', items: hemostasisSizes },
+      { title: 'Ⅰ型（含透气胶层）', meta: '红白色图文包装，OTC产品（院外急救和急救门诊使用）', items: hemostasisSizes },
+      { title: 'Ⅱ型（无胶层）', meta: '浅蓝白色图文色包装，临床用产品（医院内手术使用）', items: hemostasisSizes },
     ],
   },
   {
@@ -135,11 +132,11 @@ const hemostasisDetails = [
       '唯一性：唯一可用于院前、门诊紧急急救和手术中快速止血的三类不可吸收安全止血产品',
       '止血快速，吸附性强：使创面干净、视野清晰，提高手术质量，节约手术时间',
       '不粘连手术器械：可移位置放，操作简单方便，不影响创面辨识',
-      '节约血源：快速止血降低输血源的使用及用其他耗材成本',
-      '非吸收材质，安全无残留：止血后移除体外，无炎性反应、无伪影、无栓塞',
-      '医用海绵遇到血液后不会成为胶状物，不粘连手术器械',
-      '快速止血可以节约对输血源的再利用',
-      '止血后移除体外，无须留置体内，无任何残留物，不会造成继发性风险',
+      '节约血源：快速止血降低输血源的使用及用其他耗材使用成本。',
+      '非吸收材质止血后移除体外。安全无残留，无炎性反应、无伪影、无栓塞。',
+      '医用海绵遇到血液后不会成为胶状物，不粘连手术器械，对伤口治疗辨识度高。',
+      '快速止血可以急救生命，也可以节约对输血源的再利用',
+      '止血后移除体外，无须留置体内，无任何残留物，不会造成继发性风险。',
     ],
   },
   {
@@ -155,8 +152,7 @@ const hemostasisDetails = [
       ['2020年', '取得国家医保医用耗材分类代码，被陕西省医保局纳入医保'],
       ['2021年', '中标陕西省耗材医保集中带量采购项目'],
       ['2023年', '中标内蒙古牵头14省联盟止血耗材集中带量采购项目'],
-      ['2025年', '中标京津冀止血耗材集中带量采购项目（独立分组，活性止血海绵）'],
-      ['2026年', '中标京津冀集中带量采购止血材料项目（全国参与执行）'],
+      ['2026年', '中标京津冀止血耗材集中带量采购项目（独立分组，活性止血海绵）全国参与执行'],
     ],
   },
 ]
@@ -170,14 +166,12 @@ const pvfDetails = [
       ['产品技术要求', '陕械注准20172140019'],
       ['发明专利', 'ZL 2009 1 0021479.6（医用止血海绵及其制备方法）'],
       ['生产许可', '陕食药监械生产许20160021号'],
-      ['批准日期', '2021年11月9日'],
-      ['有效期至', '2026年11月8日'],
     ],
   },
   {
     heading: '产品简介',
     wide: true,
-    intro: '聚乙烯醇缩甲醛（PVF）医用海绵是安帝源原创生物新材料，用于各种创伤出血（液）的吸附、伤口的包扎和致伤缺损的填充，也是负压封闭引流手术中应用的主体材料。该产品技术先进，可用于医疗、电子、生活等多个领域。',
+    intro: '聚乙烯醇缩甲醛（PVF）医用海绵是安帝源生物科技团队原创的生物新材料，用于各种创伤出血（液）的吸附、伤口的包扎和致伤缺损的填充，也是负压封闭引流手术中应用的主体材料。该产品技术先进，可用于医疗、电子、生活等多个领域。',
   },
   {
     heading: '完整规格型号',
@@ -244,7 +238,7 @@ const pvfDetails = [
   },
 ]
 
-const clinicalEvidence = [
+const animalEvidence = [
   {
     institution: '西安交通大学医学院药理研究室',
     result: '3-5分钟控制出血，8-10分钟完全止血（不渗血）',
@@ -254,35 +248,57 @@ const clinicalEvidence = [
       ['实验背景', '动脉因人类伦理学要求，不允许用人做动脉试验。猪与人的凝血同缘性达87%以上，为凝血（止血）的国际标准动物。很多止血产品用的是鼠和兔子（易止血），用成猪（和人匹重）的很少，本实验数据具有极高的临床参考价值。'],
     ],
   },
+]
+
+const humanClinicalEvidence = [
   {
-    institution: '第四军医大学 · 骨科',
+    institution: '北京大学人民医院 / 首都医科大学宣武医院',
+    result: '开放性深层组织活动性出血止血验证',
+    details: [
+      ['临床对象', '选取接受中等程度以上手术的多例患者。'],
+      ['验证内容', '针对开放性的深层组织活动性出血进行止血验证。'],
+      ['实验结果', '急救止血敷片在临床应用中，对手术缺口的出血止血效果安全有效，能有效控制各种出血模型，无任何毒性和明显的副作用。'],
+    ],
+  },
+]
+
+// 产品上市后在临床中使用的再验征
+const postMarketEvidence = [
+  {
+    institution: '第四军医大学 · 骨科  ·  切皮压迫皮缘性手术出血的止血',
     result: '3分钟快速止血',
     details: [
       ['试用结果', '手术创面3分钟快速止血，减少患者出血量，保障手术中全程创面清晰，节约手术时间。'],
     ],
   },
   {
-    institution: '沈阳医科大学 · 脊柱外科',
+    institution: '沈阳医科大学 · 脊柱外科 · 大椎管手术出血的止',
     result: '1分钟快速止血',
     details: [
       ['试用结果', '椎管止血难度大，使用急救止血敷片1分钟快速止血，出血量非常少，节约手术时间，降低手术风险。'],
     ],
   },
   {
-    institution: '心血管介入科',
+    institution: ' · 心血管介入科 · 桡动脉穿刺手术后血管深层出血的止血',
     result: '3-5分钟控制，8-10分钟稳定',
     details: [
       ['试用结果', '桡动脉穿刺术后深层止血，一般需按压20分钟甚至十几小时，使用急救止血敷片3-5分钟控制出血，8-10分钟稳定止血，减轻传统长期压迫止血引起的诸多副作用。'],
     ],
   },
   {
-    institution: '四川华美口腔医院 · 口腔外科',
+    institution: '四川华美口腔医院 · 口腔外科 · 拔牙(下颚磨牙）手术中出血的止血',
     result: '1分钟止血',
     details: [
       ['试用结果', '止血时间1分钟，减少患者出血量，缩短出血时间，减轻常规止血时间长引起的患者紧张压力和吐污不止不停漱口的不便。'],
     ],
   },
 ]
+
+const evidenceGroupDividerStyle = {
+  marginTop: '36px',
+  paddingTop: '36px',
+  borderTop: '1px solid var(--line)',
+}
 
 const procurement = [
   {
@@ -310,9 +326,9 @@ const procurement = [
     scope: 'PVF医用海绵',
   },
   {
-    year: '2025',
-    title: '京津冀止血耗材项目中标',
-    detail: '以独立分组、活性止血海绵进入京津冀止血耗材集中带量采购项目。',
+    year: '2026',
+    title: '京津冀止血耗材项目中标全国参与执行',
+    detail: '以活性止血海绵独立分组进入京津冀止血耗材集中带量采购项目。',
     scope: '急救止血敷片',
   },
   {
@@ -612,6 +628,35 @@ function ContactForm() {
   )
 }
 
+function EvidenceEntry({ item }) {
+  return (
+    <article>
+      <div>
+        <Buildings size={22} aria-hidden="true" />
+        <strong>{item.institution}</strong>
+      </div>
+      <h4>{item.result}</h4>
+      <dl className="clinical-detail">
+        {item.details.map(([label, text]) => (
+          <div key={label}>
+            <dt>{label}</dt>
+            <dd>{text}</dd>
+          </div>
+        ))}
+      </dl>
+    </article>
+  )
+}
+
+function EvidenceGroup({ title, items, separated = false }) {
+  return (
+    <section className="clinical-group" style={separated ? evidenceGroupDividerStyle : undefined}>
+      <h3>{title}</h3>
+      {items.map((item) => <EvidenceEntry key={`${item.institution}-${item.result}`} item={item} />)}
+    </section>
+  )
+}
+
 export default function App() {
   return (
     <>
@@ -654,13 +699,13 @@ export default function App() {
               </div>
               <div className="about-copy-body">
                 <p>
-                  杨凌安帝源生物科技有限公司成立于2009年5月，位于陕西省杨凌示范区邰城南路10号。是一家集三类医疗器械研发、生产、销售为一体的综合性现代化高科技生物产业公司。
+                  杨凌安帝源生物科技有限公司成立于2009年,位于陕西省杨凌示范区邰城南路10号。是一家集三类医疗器械研发、生产、销售为一体的综合性现代化高科技生物产业公司。
                 </p>
                 <p>
-                  公司拥有多项原创知识产权和生物科技独家技术，如：“HCV病毒复制”、“急救止血敷片”、“复方止血敷片”、“超薄生物止血膜”、“聚乙烯醇缩甲醛（PVF）医用海绵”等系列核心技术及产品。公司生物科技药械组合的“急救止血敷片”产品在院外紧急止血和院内急诊及手术中快速止血急救生命方面发挥重要作用。
+                  公司拥有多项原创知识产权和生物科技独家技术，如：“急救止血敷片”、“复方止血敷片”、“超薄生物止血膜”、“聚乙烯醇缩甲醛（PVF）医用海绵”、“HCV病毒复制” 等系列核心技术及产品。公司生物科技药械组合的“急救止血敷片”产品在院外紧急止血和院内急诊及手术中快速止血急救生命方面发挥重要作用。
                 </p>
                 <p>
-                  多年来公司一直坚持以100%的原创技术为经营发展方向，拥有多条国家级GMP认证的生产线和一支高质量生产及推广团队，核心技术产品均进入国家医保集采目录，在生物技术用于生命应急急救止血和急诊、手术中的快速止血领域具有一定的影响力。
+                  多年来公司一直坚持以100%的原创技术为经营发展方向，拥有多条国家级GMP认证的生产线和一支高质量生产及推广团队，核心原创技术产品均进入国家医保集采目录，在生物技术用于生命应急急救止血和急诊、手术中的快速止血领域具有一定的影响力。
                 </p>
               </div>
             </div>
@@ -706,19 +751,19 @@ export default function App() {
               <article>
                 <h4>急救止血敷片</h4>
                 <p>
-                  由陕西杨凌岱鹰生物技术研究所历时七年研究开发，拥有原创知识产权（发明专利号：ZL200510096239.4）。该产品填补了国际上外伤急救止血领域的空白。创造性地将吸水海绵和多种生物活性药物组分相结合，采用独特的生产工艺让活性药物在常温下不失活性，通过调动人自身凝血因子快速止血。
+                  拥有原创知识产权和核心技术，创造性地将吸水海绵和多种生物活性药物组分相结合，采用独特的生产工艺使活性药物在常温下不失活性，通过调动人自身凝血因子快速止血，展示生物科技的魅力。
+                </p>
+              </article>
+              <article>
+                <h4>独家地位</h4>
+                <p>
+                  拥有核心科技，原创知识产权（发明专利号：ZL2005 10096239.4）全球唯一冠名为“急救止血敷片”的产品；国家医保集采（京津冀）招标以活性药物海绵独立分组（无同类同理医疗器械类同类比对产品）；也是我国唯一经过药、械联审的三类止血产品。
                 </p>
               </article>
               <article>
                 <h4>PVF医用海绵</h4>
                 <p>
                   拥有自主发明专利（ZL 2009 1 0021479.6）及产品企业技术要求（陕械注准20172140019），涵盖海绵制备方法及核心配方。
-                </p>
-              </article>
-              <article>
-                <h4>独家地位</h4>
-                <p>
-                  全球唯一冠名为“急救止血敷片”的产品，招标中无同类同理医疗器械类同类比对产品，我国唯一经过药、械联审的三类外用止血产品。
                 </p>
               </article>
             </div>
@@ -764,7 +809,7 @@ export default function App() {
         <section id="products" className="section products-section">
           <div className="section-heading" data-reveal>
             <h2>三重止血功能，叠加互促，共同打开快速止血的凝血键</h2>
-            <p>从主动止血到吸液支撑，产品信息按临床用途和注册类别清晰分开。</p>
+            <p>从调动凝血因子主动快速止血到吸液支撑，产品信息按临床用途和注册类别清晰分列。</p>
           </div>
 
           <ProductArticle
@@ -781,7 +826,7 @@ export default function App() {
             ]}
             details={hemostasisDetails}
           >
-            由吸水海绵与生物活性药物组分构成，通过物理吸附、物理压迫及生物活性药物形成三重止血机理，调动人体自身凝血因子，迅速止血，止血后移除体外（使用安全可靠，无滞留体内继发风险。
+            由吸水海绵与生物活性药物组分构成，通过物理吸附、物理压迫及生物活性药物，调动人体自身凝血因子，迅速止血，止血后移除体外（使用安全可靠，无滞留体内继发风险。
           </ProductArticle>
 
           <ProductArticle
@@ -825,29 +870,14 @@ export default function App() {
 
         <section id="evidence" className="section evidence-section">
           <div className="section-heading" data-reveal>
-            <h2>临床验证及产品上市后在临床中使用的再验征</h2>
+            <h2>动物实验  -  临床验证  -  产品上市后在临床中使用的再验征</h2>
           </div>
 
           <div className="evidence-layout">
             <div className="clinical-list" data-reveal>
-              <h3>公司资料所载临床验证</h3>
-              {clinicalEvidence.map((item) => (
-                <article key={item.institution}>
-                  <div>
-                    <Buildings size={22} aria-hidden="true" />
-                    <strong>{item.institution}</strong>
-                  </div>
-                  <h4>{item.result}</h4>
-                  <dl className="clinical-detail">
-                    {item.details.map(([label, text]) => (
-                      <div key={label}>
-                        <dt>{label}</dt>
-                        <dd>{text}</dd>
-                      </div>
-                    ))}
-                  </dl>
-                </article>
-              ))}
+              <EvidenceGroup title="动物实验" items={animalEvidence} />
+              <EvidenceGroup title="人体 / 临床实验" items={humanClinicalEvidence} separated />
+              <EvidenceGroup title="产品上市后在临床中使用的再验征" items={postMarketEvidence} separated />
               <a className="text-link" href="#contact">
                 更多详细临床资料请咨询我们 <ArrowRight size={17} aria-hidden="true" />
               </a>
@@ -856,7 +886,7 @@ export default function App() {
             <div className="procurement-panel" data-reveal>
               <div className="procurement-heading">
                 <h3>医保与集采历程</h3>
-                <p>从医保准入到联盟集采，按产品核对关键节点。</p>
+
               </div>
               <ol>
                 {procurement.map(({ year, title, detail, scope }) => (
