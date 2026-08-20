@@ -1,0 +1,51 @@
+.clinical-group article:last-child {
+  border-bottom: 0;
+}
+
+.clinical-summary {
+  margin-top: 28px;
+  padding: 24px 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.clinical-summary h4 {
+  margin-bottom: 12px;
+  font-size: 16px;
+}
+
+.clinical-summary dl {
+  display: grid;
+  margin: 0;
+}
+
+.clinical-summary dl > div {
+  display: grid;
+  grid-template-columns: 86px 1fr;
+  gap: 16px;
+  padding: 12px 0;
+}
+
+.clinical-summary dl > div + div {
+  border-top: 1px solid var(--line);
+}
+
+.clinical-summary dt {
+  color: var(--accent-dark);
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.75;
+}
+
+.clinical-summary dd {
+  color: var(--ink-soft);
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+@media (max-width: 560px) {
+  .clinical-summary dl > div {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+}

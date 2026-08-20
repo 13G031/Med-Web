@@ -279,7 +279,7 @@ const postMarketEvidence = [
     ],
   },
   {
-    institution: ' · 心血管介入科 · 桡动脉穿刺手术后血管深层出血的止血',
+    institution: '绥中医院 · 心血管介入科 · 桡动脉穿刺手术后血管深层出血的止血',
     result: '3-5分钟控制，8-10分钟稳定',
     details: [
       ['试用结果', '桡动脉穿刺术后深层止血，一般需按压20分钟甚至十几小时，使用急救止血敷片3-5分钟控制出血，8-10分钟稳定止血，减轻传统长期压迫止血引起的诸多副作用。'],
@@ -328,14 +328,8 @@ const procurement = [
   {
     year: '2026',
     title: '京津冀止血耗材项目中标全国参与执行',
-    detail: '以活性止血海绵独立分组进入京津冀止血耗材集中带量采购项目。',
+    detail: '紧急止血敷片以活性止血海绵独立分组进入京津冀止血耗材集中带量采购项目。',
     scope: '急救止血敷片',
-  },
-  {
-    year: '2026',
-    title: '全国参与执行',
-    detail: '两项产品中标京津冀集中带量采购止血材料项目，并进入全国参与执行阶段。',
-    scope: '急救止血敷片 · PVF医用海绵',
   },
 ]
 
@@ -878,6 +872,19 @@ export default function App() {
               <EvidenceGroup title="动物实验" items={animalEvidence} />
               <EvidenceGroup title="人体 / 临床实验" items={humanClinicalEvidence} separated />
               <EvidenceGroup title="产品上市后在临床中使用的再验征" items={postMarketEvidence} separated />
+              <aside className="clinical-summary" aria-labelledby="post-market-summary-title">
+                <h4 id="post-market-summary-title">上市后临床使用汇总</h4>
+                <dl>
+                  <div>
+                    <dt>延续注册</dt>
+                    <dd>三类延续注册，已向NMPA提供上市后31家医院临床使用共232例不同创面的出血的止血样列（再次换证无需再提供临床反馈）。</dd>
+                  </div>
+                  <div>
+                    <dt>观察结果</dt>
+                    <dd>临床使用观察的效果得出：急救止血敷片232例观察中止血效果优及良好，无一例无效止血和不良反应。</dd>
+                  </div>
+                </dl>
+              </aside>
               <a className="text-link" href="#contact">
                 更多详细临床资料请咨询我们 <ArrowRight size={17} aria-hidden="true" />
               </a>
@@ -973,10 +980,6 @@ export default function App() {
     </>
   )
 }
-
-
-
-
 
 
 
