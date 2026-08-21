@@ -57,12 +57,12 @@ const companyHonors = [
 ]
 
 const institutionalDeployments = [
-  '中国人民解放军总后评审及储备',
-  '中国人民武警部队评审及配备',
-  '国家公安部警务列配评审及配备',
-  '国家应急部评审及陕西消防局配备',
-  '陕西省公安警务列配目录并配备',
-  '国家西部药品动员中心储备目录',
+  '通过中国人民解放军总后评审及储备',
+  '通过中国人民武警部队评审及配备',
+  '通过国家公安部警务列配评审及配备',
+  '通过国家应急部评审及陕西消防局配备',
+  '通过陕西省公安警务列配目录并配备',
+  '入选国家西部药品动员中心储备目录',
   '陕西省教育厅针对陕西省各学校的安全问题发文推荐',
   '入选陕西省应急配备目录并储备',
   '黑龙江省100个旅游景点应急站配备',
@@ -72,11 +72,11 @@ const reliefSupport = [
   '玉树地震救援捐赠及使用',
   '雅安地震救援捐赠及使用',
   '四川甘孜州地震救援捐赠及使用',
-  '河南特大水灾受灾人员防护捐赠及使用',
+  '河南特大水灾受灾及遇险人员防护捐赠及使用',
   '新疆武警防护捐赠及使用',
   '云南、西藏及新疆边防战士防护配备',
-  '2021云南疫情工作人员防护配备',
-  '陕西曙光救援队太白山远山站活动捐赠配备',
+  '云南疫情工作人员防护配备',
+  '陕西曙光救援队太白山远山活动捐赠配备',
 ]
 
 const mechanism = [
@@ -98,7 +98,7 @@ const hemostasisSizes = ['9.5×8.0cm', '5.0×4.0cm', '8.0×3.0cm', '10.0×1.5cm'
 
 const hemostasisDetails = [
   {
-    heading: '注册与许可（NMDA）',
+    heading: '注册与许可（NMPA）',
     facts: [
       ['管理类别', 'Ⅲ类医疗器械'],
       ['注册号', '国械注准20153140973'],
@@ -129,13 +129,13 @@ const hemostasisDetails = [
     wide: true,
     ordered: true,
     items: [
-      '唯一性：唯一可用于院前、门诊紧急急救和手术中快速止血的三类不可吸收安全止血产品',
-      '止血快速，吸附性强：使创面干净、视野清晰，提高手术质量，节约手术时间',
-      '不粘连手术器械：可移位置放，操作简单方便，不影响创面辨识',
-      '节约血源：快速止血降低输血源的使用及用其他耗材使用成本。',
-      '非吸收材质止血后移除体外。安全无残留，无炎性反应、无伪影、无栓塞。',
+      '唯一性，唯一可用于院前、门诊紧急急救和手术中快速止血的三类不可吸收安全止血产品。',
+      '止血快速，吸附性强，使创面干净、视野清晰，提高手术质量，节约手术时间。',
+      '不粘连手术器械，可移位置放，操作简单方便，不影响创面辨识度。',
+      '节约血源，快速止血降低输血源的使用及用其他耗材使用成本。',
+      '非吸收材质止血后移除体外，安全无残留，无炎性反应、无伪影、无栓塞。',
       '医用海绵遇到血液后不会成为胶状物，不粘连手术器械，对伤口治疗辨识度高。',
-      '快速止血可以急救生命，也可以节约对输血源的再利用',
+      '快速止血可以急救生命，也可以节约对输血源的再利用。',
       '止血后移除体外，无须留置体内，无任何残留物，不会造成继发性风险。',
     ],
   },
@@ -163,9 +163,9 @@ const pvfDetails = [
     wide: true,
     facts: [
       ['管理类别', 'Ⅱ类医疗器械（分类编码14-09-03 外科海绵敷料）'],
-      ['产品技术要求', '陕械注准20172140019'],
+      ['产品注册证号', '陕械注准20172140019'],
       ['发明专利', 'ZL 2009 1 0021479.6（医用止血海绵及其制备方法）'],
-      ['生产许可', '陕食药监械生产许20160021号'],
+      ['生产许可记录', '陕食药监械生产许20160021号'],
     ],
   },
   {
@@ -179,7 +179,7 @@ const pvfDetails = [
     groups: [
       {
         title: 'PVF-I 矩形（长×宽×高）',
-        meta: '浅绿色包装',
+        meta: '浅绿白图文包装',
         items: [
           'PVF-I-1：30.0×24.0×1.0cm',
           'PVF-I-2：20.0×16.0×1.0cm',
@@ -265,7 +265,7 @@ const humanClinicalEvidence = [
 // 产品上市后在临床中使用的再验征
 const postMarketEvidence = [
   {
-    institution: '第四军医大学 · 骨科  ·  切皮压迫皮缘性手术出血的止血',
+    institution: '第四军医大学西京医院 · 骨科 · 切皮压迫皮缘性手术出血的止血',
     result: '3分钟快速止血',
     details: [
       ['试用结果', '手术创面3分钟快速止血，减少患者出血量，保障手术中全程创面清晰，节约手术时间。'],
@@ -436,10 +436,10 @@ function ProofLedger() {
   )
 }
 
-function ProductArticle({ type, title, registration, image, imageWebp, imageAlt, imageWidth = 1448, imageHeight = 1086, imageFit, children, facts, details, reverse }) {
+function ProductArticle({ type, title, registration, image, imageWebp, imageAlt, imageWidth = 1448, imageHeight = 1086, imageFit, imageOverlay, children, facts, details, reverse }) {
   return (
     <article className={`product-article ${reverse ? 'product-article-reverse' : ''}`} data-reveal>
-      <figure className={`product-visual ${imageFit === 'contain' ? 'product-visual-contained' : ''}`}>
+      <figure className={`product-visual ${imageFit === 'contain' ? 'product-visual-contained' : ''} ${imageOverlay ? 'product-visual-with-overlay' : ''}`}>
         <picture>
           {imageWebp && <source srcSet={imageWebp} type="image/webp" />}
           <img
@@ -451,6 +451,7 @@ function ProductArticle({ type, title, registration, image, imageWebp, imageAlt,
             decoding="async"
           />
         </picture>
+        {imageOverlay}
       </figure>
       <div className="product-copy">
         <div className="product-type">{type}</div>
@@ -755,9 +756,9 @@ export default function App() {
                 </p>
               </article>
               <article>
-                <h4>PVF医用海绵</h4>
+                <h4>聚乙烯醇缩甲醛（PVF）医用海绵</h4>
                 <p>
-                  拥有自主发明专利（ZL 2009 1 0021479.6）及产品企业技术要求（陕械注准20172140019），涵盖海绵制备方法及核心配方。
+                  拥有自主发明专利（ZL 2009 1 0021479.6）及产品企业技术要求（二类医疗器械 陕械注准20172140019），涵盖海绵制备方法及核心配方。
                 </p>
               </article>
             </div>
@@ -765,6 +766,7 @@ export default function App() {
 
           <div className="about-records" data-reveal>
             <div className="about-subheading">
+              <span className="product-type">急救止血敷片</span>
               <h3>荣誉与公共服务</h3>
               <p>按重大科技项目、国家部门及省级中标列配、灾害救援捐赠三个类别集中呈现。</p>
             </div>
@@ -810,10 +812,65 @@ export default function App() {
             type="Ⅲ类医疗器械"
             title="急救止血敷片"
             registration="国械注准20153140973"
-            image="/images/hemostasis-packages-branded-v2.jpg"
-            imageWebp="/images/hemostasis-packages-branded-v2.webp"
+            image="/images/hemostasis-packages-source.png"
             imageFit="contain"
             imageAlt="急救止血敷片包装盒、无菌内袋与止血敷片产品展示"
+            imageWidth={1536}
+            imageHeight={1024}
+            imageOverlay={(
+              <svg className="product-image-overlay" viewBox="0 0 1536 1024" aria-hidden="true">
+                <defs>
+                  <linearGradient id="red-package-surface" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0" stopColor="#f7f7f7" />
+                    <stop offset="1" stopColor="#eeeeee" />
+                  </linearGradient>
+                  <linearGradient id="blue-package-surface" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0" stopColor="#f5f5f5" />
+                    <stop offset="1" stopColor="#ededed" />
+                  </linearGradient>
+                  <filter id="soft-package-edge" x="-15%" y="-15%" width="130%" height="130%">
+                    <feGaussianBlur stdDeviation="12" />
+                  </filter>
+                  <mask id="red-print-field">
+                    <rect x="96" y="238" width="315" height="242" rx="14" fill="white" filter="url(#soft-package-edge)" />
+                  </mask>
+                  <mask id="blue-print-field">
+                    <rect x="775" y="400" width="310" height="232" rx="14" fill="white" filter="url(#soft-package-edge)" />
+                  </mask>
+                </defs>
+
+                <rect x="82" y="224" width="343" height="270" fill="url(#red-package-surface)" mask="url(#red-print-field)" />
+                <g className="product-package-copy product-package-copy-red">
+                  <text x="118" y="276" className="product-package-logo">安帝源</text>
+                  <text x="119" y="296" className="product-package-latin">andiyuan</text>
+
+                  <text x="120" y="369" className="product-package-title">急救止血敷片</text>
+                  <text x="121" y="407" className="product-package-detail">【医疗器械注册证号】国械注准20153140973</text>
+                  <text x="121" y="433" className="product-package-detail">【发明专利号】ZL 2005 1 0096239.4</text>
+                  <text x="121" y="459" className="product-package-detail">【产品名称】急救止血敷片</text>
+                </g>
+
+                <g className="product-package-footer-red">
+                  <rect x="73" y="562" width="690" height="31" />
+                  <rect x="73" y="562" width="690" height="3" className="product-package-footer-edge" />
+                  <text x="418" y="584">杨凌安帝源生物科技有限公司</text>
+                </g>
+
+                <rect x="761" y="386" width="338" height="260" fill="url(#blue-package-surface)" mask="url(#blue-print-field)" />
+                <g className="product-package-copy product-package-copy-blue">
+                  <text x="799" y="443" className="product-package-logo">安帝源</text>
+                  <text x="800" y="465" className="product-package-latin">andiyuan</text>
+
+                  <text x="800" y="530" className="product-package-title">急救止血敷片</text>
+                  <text x="801" y="566" className="product-package-detail">【医疗器械注册证号】国械注准20153140973</text>
+                  <text x="801" y="592" className="product-package-detail">【发明专利号】ZL 2005 1 0096239.4</text>
+                  <text x="801" y="618" className="product-package-detail">【产品名称】急救止血敷片</text>
+                </g>
+
+                <text x="421" y="698" fontSize="27" className="product-image-overlay-red">Ⅰ类</text>
+                <text x="1091" y="808" fontSize="27" className="product-image-overlay-blue">Ⅱ类</text>
+              </svg>
+            )}
             facts={[
               ['发明专利', 'ZL 2005 1 0096239.4'],
               ['适用方向', '院前急救、急诊、手术创面及穿刺止血'],
@@ -823,24 +880,6 @@ export default function App() {
             由吸水海绵与生物活性药物组分构成，通过物理吸附、物理压迫及生物活性药物，调动人体自身凝血因子，迅速止血，止血后移除体外（使用安全可靠，无滞留体内继发风险。
           </ProductArticle>
 
-          <ProductArticle
-            type="Ⅱ类医疗器械"
-            title="PVF 医用海绵"
-            registration="陕械注准20172140019"
-            image="/images/pvf-product-display-v2.jpg"
-            imageAlt="安帝源聚乙烯醇缩甲醛 PVF 医用海绵、包装盒与密封袋产品展示"
-            imageWidth={1536}
-            imageHeight={1024}
-            imageFit="contain"
-            reverse
-            facts={[
-              ['发明专利', 'ZL 2009 1 0021479.6'],
-              ['适用方向', '吸血吸液、创面护理、腔道填塞及物理支撑'],
-            ]}
-            details={pvfDetails}
-          >
-            聚乙烯醇缩甲醛医用海绵具备高吸液、柔软高弹、无纤维脱落等特点，可制成矩形、圆柱、圆管及定制形状。
-          </ProductArticle>
         </section>
 
         <section className="mechanism-section" aria-labelledby="mechanism-title">
@@ -864,6 +903,7 @@ export default function App() {
 
         <section id="evidence" className="section evidence-section">
           <div className="section-heading" data-reveal>
+            <span className="product-type">急救止血敷片</span>
             <h2>动物实验  -  临床验证  -  产品上市后在临床中使用的再验征</h2>
           </div>
 
@@ -907,8 +947,30 @@ export default function App() {
                   </li>
                 ))}
               </ol>
+              <p className="procurement-note">全国医疗采购均已挂网</p>
             </div>
           </div>
+        </section>
+
+        <section className="section products-section">
+          <ProductArticle
+            type="Ⅱ类医疗器械"
+            title="聚乙烯醇缩甲醛（PVF）医用海绵"
+            registration="陕械注准20172140019"
+            image="/images/pvf-product-display-v2.jpg"
+            imageAlt="安帝源聚乙烯醇缩甲醛 PVF 医用海绵、包装盒与密封袋产品展示"
+            imageWidth={1536}
+            imageHeight={1024}
+            imageFit="contain"
+            reverse
+            facts={[
+              ['发明专利', 'ZL 2009 1 0021479.6'],
+              ['适用方向', '吸血吸液、创面护理、腔道填塞及物理支撑'],
+            ]}
+            details={pvfDetails}
+          >
+            聚乙烯醇缩甲醛医用海绵具备高吸液、柔软高弹、无纤维脱落等特点，可制成矩形、圆柱、圆管及定制形状。
+          </ProductArticle>
         </section>
 
         <section id="support" className="section support-section">
@@ -980,11 +1042,3 @@ export default function App() {
     </>
   )
 }
-
-
-
-
-
-
-
-

@@ -1,3 +1,81 @@
+.product-copy h3 {
+  text-wrap: wrap;
+}
+
+.product-image-overlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  font-family: PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif;
+  font-weight: 600;
+  text-anchor: middle;
+  pointer-events: none;
+}
+
+.product-visual-with-overlay img,
+.product-article:hover .product-visual-with-overlay img {
+  transform: none;
+}
+
+.product-package-copy {
+  text-anchor: start;
+}
+
+.product-package-copy-red {
+  fill: #d8071d;
+}
+
+.product-package-copy-blue {
+  fill: #079eaa;
+}
+
+.product-package-logo {
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.product-package-latin {
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: .08em;
+}
+
+.product-package-title {
+  fill: #090909;
+  font-size: 36px;
+  font-weight: 700;
+}
+
+.product-package-detail {
+  fill: #181818;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.product-package-footer-red {
+  fill: #d8071d;
+}
+
+.product-package-footer-red .product-package-footer-edge {
+  fill: #b90014;
+}
+
+.product-package-footer-red text {
+  fill: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  text-anchor: middle;
+}
+
+.product-image-overlay-red {
+  fill: var(--error);
+}
+
+.product-image-overlay-blue {
+  fill: var(--accent);
+}
+
 .clinical-group article:last-child {
   border-bottom: 0;
 }
@@ -41,6 +119,16 @@
   color: var(--ink-soft);
   font-size: 16px;
   line-height: 1.75;
+}
+
+.procurement-note {
+  margin: 16px 0 0;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+  color: var(--accent-dark);
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.5;
 }
 
 @media (max-width: 560px) {
