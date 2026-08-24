@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react'
+import './code-groups.css'
 import {
   ArrowRight,
   Buildings,
@@ -28,12 +29,12 @@ const proofItems = [
   {
     icon: ShieldCheck,
     title: 'Ⅲ类医疗器械',
-    detail: '国械注准20153140973',
+    detail: '紧急止血敷片（国械注准20153140973）',
   },
   {
     icon: Certificate,
     title: 'Ⅱ类医疗器械',
-    detail: '陕械注准20172140019',
+    detail: 'PVF海绵（陕械注准20172140019）',
   },
   {
     icon: Flask,
@@ -42,7 +43,7 @@ const proofItems = [
   },
   {
     icon: Buildings,
-    title: '全国医疗采购挂网，医保集齐采，招标配备',
+    title: '全国医疗采购挂网，医保集采，招标配备',
     detail: '京进冀止血资料集中带量采购（全国执行）',
   },
 ]
@@ -115,13 +116,38 @@ const hemostasisDetails = [
   {
     heading: '适用范围',
     wide: true,
-    items: [
-      '120、999、院前和院内急诊科的紧急急救止血',
-      '外科、骨科、妇产科手术创面出血的快速止血',
-      '股动脉、桡动脉穿刺手术出血的深层止血',
-      '颌面、口腔、拔牙、耳鼻喉科、微整形出血止血',
-      '烧伤、痔瘘等多种出血症的快速止血',
-      '伤口护理的包扎止血（术后渗血）',
+    groups: [
+      {
+        title: 'Ⅰ型（院前急救与伤口护理）',
+        items: [
+          '1. 地震、抗洪、救灾等不可抗力的自然灾害发生及没有医疗条件下的野外外伤物理止血的急救储备配备；',
+          '2. 国家应急储备及全国各省、市、区、县、乡级的应急储备及配备；',
+          '3. 120、999院前急救及红十字会等国际灾难救援储备及配备；',
+          '4. 军事、警力、消防储备及配备；',
+          '5. 户外运动应急急救，户外救援队配备自救、救援储备及配备；',
+          '6. 幼稚园、大、中、小学校（师生）及校车安全应急救援配备',
+          '7. 野外高空户外活动、大型矿山、油田、钻探、勘探、各类建筑、建设工程现场等领域作业的应急急救的安全配备；',
+          '8. 公共交通站（公交车）、高铁站（高铁）、码头（轮船）、机场（飞机）及旅行中突发性外伤应急急救配备；',
+          '9. 各种车辆应急急救安全配备；',
+          '10.差旅者随身（包）应急急救携带配备；',
+          '11. 旅游景点应急站、旅游车、自驾游车辆、导游及旅客随身随车应急配备；',
+          '12. 家庭突发性外伤止血急救和自救配备；',
+          '13. 体育竞技的安全配备；',
+          '14. 意外外伤伤口的紧急止血和包扎；',
+          '15. 携带宠物突发外伤的应急急救配备；',
+        ],
+      },
+      {
+        title: 'Ⅱ型（院内临床与手术使用）',
+        items: [
+          '1. 门诊急救和术中快速止血；',
+          '2. 外科、骨科手术出血的快速止血；',
+          '3. 颌面外科、口腔、整形科出血的快速止血；',
+          '4. 烧伤科、肛肠科手术出血的快速止血；',
+          '5. 手术缝合后体表渗血的出血的止血防粘连及包扎使用'
+
+        ],
+      },
     ],
   },
   {
@@ -129,7 +155,7 @@ const hemostasisDetails = [
     wide: true,
     ordered: true,
     items: [
-      '唯一性，唯一可用于院前、门诊紧急急救和手术中快速止血的三类不可吸收安全止血产品。',
+      '是医保集采三类可用于院前、门诊紧急急救和手术中快速止血的不可吸收安全止血产品。',
       '止血快速，吸附性强，使创面干净、视野清晰，提高手术质量，节约手术时间。',
       '不粘连手术器械，可移位置放，操作简单方便，不影响创面辨识度。',
       '节约血源，快速止血降低输血源的使用及用其他耗材使用成本。',
@@ -141,13 +167,32 @@ const hemostasisDetails = [
   },
   {
     heading: '医保耗材编码',
-    codeGroups: [
-      { label: 'I类', size: '8×3cm', code: 'C15011121200000107660000012' },
-      { label: 'II类', size: '9.5×8cm', code: 'C15011121200000107660000020' },
+    wide: true,
+    codeRows: [
+      {
+        label: 'Ⅰ型',
+        items: [
+          { size: '9.5×8cm', code: 'C15011121200000107660000016' },
+          { size: '8×3cm', code: 'C15011121200000107660000014' },
+          { size: '5×4cm', code: 'C15011121200000107660000018' },
+          { size: '10×1.5cm', code: 'C15011121200000107660000015' },
+          { size: '3×1.5cm', code: 'C15011121200000107660000013' },
+        ],
+      },
+      {
+        label: 'Ⅱ型',
+        items: [
+          { size: '9.5×8cm', code: 'C15011121200000107660000020' },
+          { size: '8×3cm', code: 'C15011121200000107660000012' },
+          { size: '5×4cm', code: 'C15011121200000107660000019' },
+          { size: '10×1.5cm', code: 'C15011121200000107660000002' },
+          { size: '3×1.5cm', code: 'C15011121200000107660000017' },
+        ],
+      },
     ],
   },
   {
-    heading: '集采与医保历程',
+    heading: '国家医保医疗采购挂网与集采',
     timeline: [
       ['2020年', '取得国家医保医用耗材分类代码，被陕西省医保局纳入医保'],
       ['2021年', '中标陕西省耗材医保集中带量采购项目'],
@@ -236,6 +281,19 @@ const pvfDetails = [
     wide: true,
     note: '对该产品过敏者禁用。',
   },
+  {
+    heading: '医保耗材编码',
+    wide: true,
+    codeGroups: [
+      { label: 'PVF-I-1', size: '30×24×1.0cm', code: 'C15010521204021107660000001' },
+      { label: 'PVF-I-2', size: '20×16×1.0cm', code: 'C15010521204021107660000003' },
+      { label: 'PVF-I-3', size: '9.5×8×0.6cm', code: 'C15010521204021107660000002' },
+      { label: 'PVF-I-4', size: '5×4×0.2cm', code: 'C15010521204021107660000004' },
+      { label: 'PVF-I-5', size: '10×1.5×0.2cm', code: 'C15010521204021107660000005' },
+      { label: 'PVF-I-6', size: '3×1.5×0.2cm', code: 'C15010521204021107660000006' },
+      { label: 'PVF-I-7', size: '8×3×0.6cm', code: 'C15010521204021107660000007' },
+    ],
+  },
 ]
 
 const animalEvidence = [
@@ -272,14 +330,14 @@ const postMarketEvidence = [
     ],
   },
   {
-    institution: '沈阳医科大学 · 脊柱外科 · 大椎管手术出血的止',
+    institution: '脊柱外科 · 大椎管手术出血的止',
     result: '1分钟快速止血',
     details: [
       ['试用结果', '椎管止血难度大，使用急救止血敷片1分钟快速止血，出血量非常少，节约手术时间，降低手术风险。'],
     ],
   },
   {
-    institution: '绥中医院 · 心血管介入科 · 桡动脉穿刺手术后血管深层出血的止血',
+    institution: '心血管介入科 · 桡动脉穿刺手术后血管深层出血的止血',
     result: '3-5分钟控制，8-10分钟稳定',
     details: [
       ['试用结果', '桡动脉穿刺术后深层止血，一般需按压20分钟甚至十几小时，使用急救止血敷片3-5分钟控制出血，8-10分钟稳定止血，减轻传统长期压迫止血引起的诸多副作用。'],
@@ -329,7 +387,10 @@ const procurement = [
     year: '2026',
     title: '京津冀止血耗材项目中标全国参与执行',
     detail: '紧急止血敷片以活性止血海绵独立分组进入京津冀止血耗材集中带量采购项目。',
-    scope: '急救止血敷片',
+    scope: [
+      '急救止血敷片 · PVF医用海绵',
+      '均已完成在国家医保公共服务平台全国医疗采购挂网',
+    ],
   },
 ]
 
@@ -476,7 +537,7 @@ function ProductArticle({ type, title, registration, image, imageWebp, imageAlt,
       <details className="product-details">
         <summary>查看完整产品信息 <CaretDown size={18} aria-hidden="true" /></summary>
         <div className="product-detail-grid">
-          {details.map(({ heading, intro, facts: detailFacts, codeGroups, groups, items, ordered, timeline, note, wide }) => (
+          {details.map(({ heading, intro, facts: detailFacts, codeGroups, codeRows, groups, items, ordered, timeline, note, wide }) => (
             <section className={`product-detail-section ${wide ? 'product-detail-section-wide' : ''}`} key={heading}>
               <h4>{heading}</h4>
               {intro && <p>{intro}</p>}
@@ -491,12 +552,29 @@ function ProductArticle({ type, title, registration, image, imageWebp, imageAlt,
                 </dl>
               )}
               {codeGroups && (
-                <div className="product-code-groups" style={{display:'grid',gridTemplateColumns:'repeat(2,minmax(0,1fr))',gap:'32px',marginTop:'24px'}}>
+                <div className="product-code-groups">
                   {codeGroups.map(({ label, size, code }) => (
-                    <div className="product-code-group" key={label} style={{minWidth:0,padding:'18px 20px',border:'1px solid var(--line)',borderRadius:'10px',background:'var(--surface-blue)'}}>
-                      <h5 style={{marginBottom:'16px',fontSize:'16px'}}>{label}</h5>
-                      <p style={{marginTop:'10px'}}><span>规格：</span>{size}</p>
-                      <p style={{marginTop:'10px',overflowWrap:'anywhere'}}><span>编码：</span><strong style={{color:'var(--accent-dark)',fontSize:'12px'}}>{code}</strong></p>
+                    <div className="product-code-group" key={`${label}-${size}-${code}`}>
+                      <h5>{label}</h5>
+                      <p><span>规格：</span>{size}</p>
+                      <p className="product-code-value"><span>编码：</span><strong>{code}</strong></p>
+                    </div>
+                  ))}
+                </div>
+              )}
+              {codeRows && (
+                <div className="product-code-rows">
+                  {codeRows.map(({ label, items: rowItems }) => (
+                    <div className="product-code-row" key={label}>
+                      <h5>{label}</h5>
+                      <div className="product-code-row-items">
+                        {rowItems.map(({ size, code }) => (
+                          <div className="product-code-group" key={`${label}-${size}-${code}`}>
+                            <p><span>规格：</span>{size}</p>
+                            <p className="product-code-value"><span>编码：</span><strong>{code}</strong></p>
+                          </div>
+                        ))}
+                      </div>
                     </div>
                   ))}
                 </div>
@@ -769,7 +847,7 @@ export default function App() {
               <article>
                 <h4>聚乙烯醇缩甲醛（PVF）医用海绵</h4>
                 <p>
-                  拥有自主发明专利（ZL 2009 1 0021479.6）及产品企业技术要求（二类医疗器械 陕械注准20172140019），涵盖海绵制备方法及核心配方。
+                  聚乙烯醇缩甲醛（PVF）医用海绵（ZL 2009 1 0021479.6）二类医疗器械（陕械注准20172140019）是拥有特殊技术的医疗新材料。
                 </p>
               </article>
             </div>
@@ -777,7 +855,7 @@ export default function App() {
 
           <div className="about-records" data-reveal>
             <div className="about-subheading">
-              <span className="product-type">急救止血敷片</span>
+              <span className="product-type about-record-product-label">紧急止血敷片</span>
               <h3>荣誉与公共服务</h3>
               <p>按重大科技项目、国家部门及省级中标列配、灾害救援捐赠三个类别集中呈现。</p>
             </div>
@@ -943,22 +1021,26 @@ export default function App() {
 
             <div className="procurement-panel" data-reveal>
               <div className="procurement-heading">
-                <h3>医保与集采历程</h3>
+                <h3>国家医保医疗采购挂网与集采</h3>
 
               </div>
               <ol>
-                {procurement.map(({ year, title, detail, scope }) => (
+                {procurement.map(({ year, title, detail, scope, note }) => (
                   <li key={`${year}-${title}`}>
                     <time dateTime={year}>{year}</time>
                     <div>
                       <strong>{title}</strong>
                       <p>{detail}</p>
-                      <small>{scope}</small>
+                      {note && <p className="procurement-entry-note">{note}</p>}
+                      <small className={Array.isArray(scope) ? 'procurement-scope-lines' : undefined}>
+                        {Array.isArray(scope)
+                          ? scope.map((line) => <span key={line}>{line}</span>)
+                          : scope}
+                      </small>
                     </div>
                   </li>
                 ))}
               </ol>
-              <p className="procurement-note">全国医疗采购均已挂网</p>
             </div>
           </div>
         </section>
