@@ -1103,7 +1103,7 @@ export default function App() {
               <h2>需要产品资料或合作洽谈？</h2>
               <p>请说明产品、临床科室或采购项目，我们将按您的需求准备资料。</p>
               <address>
-                <a href="tel:02987071861"><Phone size={20} aria-hidden="true" />029-87071861 / 155-9618-5069 / 186-2933-7891</a>
+                <a href="tel:02987071861"><Phone size={20} aria-hidden="true" />029-87071861 / 186-2933-7891（中国） / 155-9618-5069 （国际）/</a>
                 <a href="mailto:wilsion_yang@163.com"><EnvelopeSimple size={20} aria-hidden="true" />wilsion_yang@163.com</a>
                 <span><MapPin size={20} aria-hidden="true" />陕西省杨凌示范区邰城南路 10 号</span>
                 <span><Clock size={20} aria-hidden="true" />官网：www.empobio.com</span>

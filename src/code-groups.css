@@ -50,6 +50,14 @@ body .product-type {
   font-size: clamp(24px, 2.1vw, 32px);
 }
 
+.evidence-section .product-type {
+  font-size: 21px;
+}
+
+.about-records .product-type {
+  font-size: clamp(25px, 2.5vw, 34px);
+}
+
 .product-code-rows {
   display: grid;
   gap: 24px;
