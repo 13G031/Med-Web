@@ -7,9 +7,7 @@ import {
   Certificate,
   CheckCircle,
   Clock,
-  DownloadSimple,
   EnvelopeSimple,
-  FileText,
   Flask,
   List,
   MapPin,
@@ -22,19 +20,19 @@ const navItems = [
   ['关于我们', '#about'],
   ['产品中心', '#products'],
   ['临床与证据', '#evidence'],
-  ['学术与支持', '#support'],
+  ['问题与解答', '#support'],
 ]
 
 const proofItems = [
   {
     icon: ShieldCheck,
     title: 'Ⅲ类医疗器械',
-    detail: '紧急止血敷片（国械注准20153140973）',
+    detail: '止血敷片（国械注准20153140973）',
   },
   {
     icon: Certificate,
     title: 'Ⅱ类医疗器械',
-    detail: 'PVF海绵（陕械注准20172140019）',
+    detail: 'PVF医用海绵（陕械注准20172140019）',
   },
   {
     icon: Flask,
@@ -120,18 +118,18 @@ const hemostasisDetails = [
       {
         title: 'Ⅰ型（院前急救与伤口护理）',
         items: [
-          '1. 地震、抗洪、救灾等不可抗力的自然灾害发生及没有医疗条件下的野外外伤物理止血的急救储备配备；',
+          '1. 地震、抗洪、救灾等不可抗力的自然灾害发生及没有医疗条件下的野外外伤紧急止血的急救储备配备；',
           '2. 国家应急储备及全国各省、市、区、县、乡级的应急储备及配备；',
           '3. 120、999院前急救及红十字会等国际灾难救援储备及配备；',
           '4. 军事、警力、消防储备及配备；',
-          '5. 户外运动应急急救，户外救援队配备自救、救援储备及配备；',
+          '5. 户外运动、户外救援队自救与救援储备及配备；',
           '6. 幼稚园、大、中、小学校（师生）及校车安全应急救援配备',
-          '7. 野外高空户外活动、大型矿山、油田、钻探、勘探、各类建筑、建设工程现场等领域作业的应急急救的安全配备；',
+          '7. 野外高空作业、大型矿山、油田、钻探、勘探、各类建筑、建设工程现场等领域作业的应急急救的安全配备；',
           '8. 公共交通站（公交车）、高铁站（高铁）、码头（轮船）、机场（飞机）及旅行中突发性外伤应急急救配备；',
           '9. 各种车辆应急急救安全配备；',
           '10.差旅者随身（包）应急急救携带配备；',
           '11. 旅游景点应急站、旅游车、自驾游车辆、导游及旅客随身随车应急配备；',
-          '12. 家庭突发性外伤止血急救和自救配备；',
+          '12. 家庭突发性外伤止血急救和自救的应急配备；',
           '13. 体育竞技的安全配备；',
           '14. 意外外伤伤口的紧急止血和包扎；',
           '15. 携带宠物突发外伤的应急急救配备；',
@@ -142,7 +140,7 @@ const hemostasisDetails = [
         items: [
           '1. 门诊急救和术中快速止血；',
           '2. 外科、骨科手术出血的快速止血；',
-          '3. 颌面外科、口腔、整形科出血的快速止血；',
+          '3. 颌面外科、口腔、整形科手术出血的快速止血；',
           '4. 烧伤科、肛肠科手术出血的快速止血；',
           '5. 手术缝合后体表渗血的出血的止血防粘连及包扎使用'
 
@@ -154,15 +152,29 @@ const hemostasisDetails = [
     heading: '产品特点与优势',
     wide: true,
     ordered: true,
-    items: [
-      '是医保集采三类可用于院前、门诊紧急急救和手术中快速止血的不可吸收安全止血产品。',
-      '止血快速，吸附性强，使创面干净、视野清晰，提高手术质量，节约手术时间。',
-      '不粘连手术器械，可移位置放，操作简单方便，不影响创面辨识度。',
-      '节约血源，快速止血降低输血源的使用及用其他耗材使用成本。',
-      '非吸收材质止血后移除体外，安全无残留，无炎性反应、无伪影、无栓塞。',
-      '医用海绵遇到血液后不会成为胶状物，不粘连手术器械，对伤口治疗辨识度高。',
-      '快速止血可以急救生命，也可以节约对输血源的再利用。',
-      '止血后移除体外，无须留置体内，无任何残留物，不会造成继发性风险。',
+    groups: [
+      {
+        title: 'Ⅰ型（院前急救与伤口护理）',
+        items: [
+          '有效控制大出血：3-5分钟有效控制大出血。',
+          '敷片具有良好的柔韧性与伤口的顺应性贴合促使活性药物可以与伤口紧密结合快速止血。',
+          '良好的安全性：所有敷片的组成成分均为中国、美国、欧洲药典载录产品，急救止血敷片没有采用任何外源性的人体蛋白如纤维蛋白原，从根本上杜绝了血源性病毒污染的危险性，所以具有良好的安全性。',
+          '操作使用携带保存方便：外伤出血非常迅速只需直接把急救止血敷片按压在伤口3-5分钟即可。使用人员无须经过专业技术培训，均可完成自救和急救，大大节省了抢救时间，提高了抢救成功率。因工艺特殊敷片可以在常温下保存方便储存和携带，适用于野外复杂的气候条件扩大了其使用范围。',
+          '减少资源使用：迅速止血除了可挽救生命，也可降低、节约对输血用血源的再使用，减少血源性疾病的再感染。',
+          '规格多样化，适合不同创伤（口）出血的止血。',
+        ],
+      },
+      {
+        title: 'Ⅱ型（院内临床与手术使用）',
+        items: [
+          '医保集采三类可用于门诊紧急急救和手术中快速止血的不可吸收安全止血产品。',
+          '止血快速、吸附性强，使创面干净、视野清晰，提高手术质量，节约手术时间。',
+          '医用海绵遇血后不会成为胶状物，不粘连手术器械，可移动放置，操作简单方便，不影响创面辨识度。',
+          '快速止血有助于减少失血，并降低输血及其他止血耗材的使用成本。',
+          '非吸收材质止血后移除体外，安全无残留，无炎性反应、无伪影、无栓塞。',
+          '止血后无须留置体内，无任何残留物，不会造成继发性风险。',
+        ],
+      },
     ],
   },
   {
@@ -299,7 +311,7 @@ const pvfDetails = [
 const animalEvidence = [
   {
     institution: '西安交通大学医学院药理研究室',
-    result: '3-5分钟控制出血，8-10分钟完全止血（不渗血）',
+    result: '股动脉出血，3-5分钟控制出血，8-10分钟完全止血（不渗血）',
     details: [
       ['实验对象', '成猪（45kg）股动脉出血止血实验（国际标准动物模型）'],
       ['实验结果', '3-5分钟控制出血，8-10分钟完全止血（不渗血）。对动静脉以及弥散性出血、深层开放性出血具有良好的止血功效。'],
@@ -391,24 +403,6 @@ const procurement = [
       '急救止血敷片 · PVF医用海绵',
       '均已完成在国家医保公共服务平台全国医疗采购挂网',
     ],
-  },
-]
-
-const faqItems = [
-  {
-    question: '两种产品的核心区别是什么？',
-    answer:
-      '急救止血敷片属于Ⅲ类医疗器械，强调物理与生物作用协同止血；PVF 医用海绵属于Ⅱ类医疗器械，主要用于吸血、吸液、物理支撑与填塞。',
-  },
-  {
-    question: '产品可用于哪些临床场景？',
-    answer:
-      '公司资料列出的场景包括院前急救、急诊、外科及骨科手术、穿刺止血、创面护理、鼻腔及其他腔道填塞等。具体使用应遵循产品说明书和专业医护人员指导。',
-  },
-  {
-    question: '如何获取注册、技术或采购资料？',
-    answer:
-      '可通过页面底部的联系方式或留言表单提出需求。正式上线前需补充可下载的证书扫描件、产品白皮书与操作指南。',
   },
 ]
 
@@ -585,9 +579,15 @@ function ProductArticle({ type, title, registration, image, imageWebp, imageAlt,
                     <div key={group.title}>
                       <h5>{group.title}</h5>
                       {group.meta && <p>{group.meta}</p>}
-                      <ul>
-                        {group.items.map((item) => <li key={item}>{item}</li>)}
-                      </ul>
+                      {ordered ? (
+                        <ol>
+                          {group.items.map((item) => <li key={item}>{item}</li>)}
+                        </ol>
+                      ) : (
+                        <ul>
+                          {group.items.map((item) => <li key={item}>{item}</li>)}
+                        </ul>
+                      )}
                     </div>
                   ))}
                 </div>
@@ -712,6 +712,86 @@ function ContactForm() {
   )
 }
 
+function QuestionForm() {
+  const [status, setStatus] = useState('idle')
+
+  const submit = (event) => {
+    event.preventDefault()
+    const form = event.currentTarget
+    const data = new FormData(form)
+    const email = String(data.get('email') || '').trim()
+    const question = String(data.get('question') || '').trim()
+    const validEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
+
+    if (!validEmail) {
+      setStatus('error-email')
+      form.elements.email.focus()
+      return
+    }
+
+    if (question.length < 10) {
+      setStatus('error-question')
+      form.elements.question.focus()
+      return
+    }
+
+    setStatus('loading')
+    window.setTimeout(() => {
+      setStatus('success')
+      form.reset()
+    }, 650)
+  }
+
+  return (
+    <form className="contact-form question-form" onSubmit={submit} noValidate>
+      <label>
+        电子邮箱
+        <input
+          type="email"
+          name="email"
+          autoComplete="email"
+          required
+          placeholder="请输入您的电子邮箱"
+          aria-invalid={status === 'error-email'}
+          aria-describedby={status === 'error-email' ? 'question-email-error' : undefined}
+        />
+      </label>
+      <label>
+        您的问题
+        <textarea
+          name="question"
+          rows="6"
+          required
+          minLength="10"
+          placeholder="请输入您希望咨询的问题"
+          aria-invalid={status === 'error-question'}
+          aria-describedby={status === 'error-question' ? 'question-help question-content-error' : 'question-help'}
+        />
+      </label>
+      <p id="question-help" className="form-help">问题内容至少需要 10 个字。</p>
+      {status === 'error-email' && (
+        <p id="question-email-error" className="form-status form-error" role="alert">
+          请输入有效的电子邮箱地址。
+        </p>
+      )}
+      {status === 'error-question' && (
+        <p id="question-content-error" className="form-status form-error" role="alert">
+          问题内容过短，请补充具体问题后重试。
+        </p>
+      )}
+      {status === 'success' && (
+        <p className="form-status form-success" role="status">
+          问题已记录。接入正式后端后，我们将通过电子邮箱回复您。
+        </p>
+      )}
+      <button className="button" type="submit" disabled={status === 'loading'}>
+        {status === 'loading' ? '正在提交' : '提交问题'}
+        {status !== 'loading' && <ArrowRight size={18} aria-hidden="true" />}
+      </button>
+    </form>
+  )
+}
+
 function EvidenceEntry({ item }) {
   return (
     <article>
@@ -817,7 +897,7 @@ export default function App() {
             <div className="about-rd-lead">
               <div className="about-subheading">
                 <h3>核心科技/研发</h3>
-                <p>围绕急救止血敷片与聚乙烯醇甲醛PVF医用海绵形成原创知识产权、核心配方及产品技术标准。</p>
+                <p>围绕急救止血敷片与聚乙烯醇甲醛PVF医用海绵形成原创知识产权、核心科技及应用场景。</p>
               </div>
               <figure className="about-rd-visual">
                 <img
@@ -891,11 +971,27 @@ export default function App() {
           </div>
         </section>
 
-        <section id="products" className="section products-section">
-          <div className="section-heading" data-reveal>
-            <h2>三重止血功能，叠加互促，共同打开快速止血的凝血键</h2>
-            <p>从调动凝血因子主动快速止血到吸液支撑，产品信息按临床用途和注册类别清晰分列。</p>
+        <section id="products" className="mechanism-section" aria-labelledby="mechanism-title">
+          <div className="section mechanism-inner" data-reveal>
+            <div className="section-heading section-heading-light">
+              <h2 id="mechanism-title">三重止血功能，叠加互促，共同打开快速止血的凝血键</h2>
+              <p>从调动凝血因子主动快速止血到吸液支撑，产品信息按临床用途和注册类别清晰分列。</p>
+            </div>
+            <ol className="mechanism-flow">
+              {mechanism.map((item, index) => (
+                <li key={item.title}>
+                  <span>{String(index + 1).padStart(2, '0')}</span>
+                  <div>
+                    <h3>{item.title}</h3>
+                    <p>{item.text}</p>
+                  </div>
+                </li>
+              ))}
+            </ol>
           </div>
+        </section>
+
+        <section className="section products-section">
 
           <ProductArticle
             type="Ⅲ类医疗器械"
@@ -971,25 +1067,6 @@ export default function App() {
 
         </section>
 
-        <section className="mechanism-section" aria-labelledby="mechanism-title">
-          <div className="section mechanism-inner" data-reveal>
-            <div className="section-heading section-heading-light">
-              <h2 id="mechanism-title">三重止血机理，形成连续作用</h2>
-            </div>
-            <ol className="mechanism-flow">
-              {mechanism.map((item, index) => (
-                <li key={item.title}>
-                  <span>{String(index + 1).padStart(2, '0')}</span>
-                  <div>
-                    <h3>{item.title}</h3>
-                    <p>{item.text}</p>
-                  </div>
-                </li>
-              ))}
-            </ol>
-          </div>
-        </section>
-
         <section id="evidence" className="section evidence-section">
           <div className="section-heading" data-reveal>
             <span className="product-type">急救止血敷片</span>
@@ -1015,7 +1092,7 @@ export default function App() {
                 </dl>
               </aside>
               <a className="text-link" href="#contact">
-                更多详细临床资料请咨询我们 <ArrowRight size={17} aria-hidden="true" />
+                咨询台（联系我们） <ArrowRight size={17} aria-hidden="true" />
               </a>
             </div>
 
@@ -1066,39 +1143,19 @@ export default function App() {
           </ProductArticle>
         </section>
 
-        <section id="support" className="section support-section">
-          <div className="support-intro" data-reveal>
-            <h2>学术与支持</h2>
-            <p>为临床、采购与合作伙伴预留白皮书、论文、操作指南和视频入口。</p>
-            <div className="resource-state">
-              <FileText size={28} aria-hidden="true" />
-              <div>
-                <strong>资料文件待提供</strong>
-                <p>当前文档未包含可公开下载的 PDF、证书扫描件或视频文件。</p>
-              </div>
-              <button type="button" disabled>
-                <DownloadSimple size={18} aria-hidden="true" />
-                暂无下载
-              </button>
-            </div>
+        <section id="support" className="section question-section">
+          <div className="question-intro" data-reveal>
+            <span className="product-type">在线咨询</span>
+            <h2>问题与解答</h2>
+            <p>请留下您的电子邮箱和具体问题，我们将根据咨询内容准备回复。</p>
           </div>
-
-          <div className="faq-block" data-reveal>
-            <h3>常见问题</h3>
-            {faqItems.map((item) => (
-              <details key={item.question}>
-                <summary>
-                  {item.question}
-                  <CaretDown size={19} aria-hidden="true" />
-                </summary>
-                <p>{item.answer}</p>
-              </details>
-            ))}
+          <div data-reveal>
+            <QuestionForm />
           </div>
         </section>
 
         <section id="contact" className="contact-section">
-          <div className="section contact-layout" data-reveal>
+          <div className="section contact-layout contact-layout-centered" data-reveal>
             <div className="contact-copy">
               <h2>需要产品资料或合作洽谈？</h2>
               <p>请说明产品、临床科室或采购项目，我们将按您的需求准备资料。</p>
@@ -1109,7 +1166,6 @@ export default function App() {
                 <span><Clock size={20} aria-hidden="true" />官网：www.empobio.com</span>
               </address>
             </div>
-            <ContactForm />
           </div>
         </section>
       </main>
