@@ -141,9 +141,9 @@ const hemostasisDetails = [
   },
   {
     heading: '医保耗材编码',
-    facts: [
-      ['8×3cm', 'C15011121200000107660000012'],
-      ['9.5×8cm', 'C15011121200000107660000020'],
+    codeGroups: [
+      { label: 'I类', size: '8×3cm', code: 'C15011121200000107660000012' },
+      { label: 'II类', size: '9.5×8cm', code: 'C15011121200000107660000020' },
     ],
   },
   {
@@ -476,7 +476,7 @@ function ProductArticle({ type, title, registration, image, imageWebp, imageAlt,
       <details className="product-details">
         <summary>查看完整产品信息 <CaretDown size={18} aria-hidden="true" /></summary>
         <div className="product-detail-grid">
-          {details.map(({ heading, intro, facts: detailFacts, groups, items, ordered, timeline, note, wide }) => (
+          {details.map(({ heading, intro, facts: detailFacts, codeGroups, groups, items, ordered, timeline, note, wide }) => (
             <section className={`product-detail-section ${wide ? 'product-detail-section-wide' : ''}`} key={heading}>
               <h4>{heading}</h4>
               {intro && <p>{intro}</p>}
@@ -489,6 +489,17 @@ function ProductArticle({ type, title, registration, image, imageWebp, imageAlt,
                     </div>
                   ))}
                 </dl>
+              )}
+              {codeGroups && (
+                <div className="product-code-groups" style={{display:'grid',gridTemplateColumns:'repeat(2,minmax(0,1fr))',gap:'32px',marginTop:'24px'}}>
+                  {codeGroups.map(({ label, size, code }) => (
+                    <div className="product-code-group" key={label} style={{minWidth:0,padding:'18px 20px',border:'1px solid var(--line)',borderRadius:'10px',background:'var(--surface-blue)'}}>
+                      <h5 style={{marginBottom:'16px',fontSize:'16px'}}>{label}</h5>
+                      <p style={{marginTop:'10px'}}><span>规格：</span>{size}</p>
+                      <p style={{marginTop:'10px',overflowWrap:'anywhere'}}><span>编码：</span><strong style={{color:'var(--accent-dark)',fontSize:'12px'}}>{code}</strong></p>
+                    </div>
+                  ))}
+                </div>
               )}
               {groups && (
                 <div className="product-detail-groups">
