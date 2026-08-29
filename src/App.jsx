@@ -176,17 +176,42 @@ const hemostasisDetails = [
         ],
       },
     ],
-    procedure: {
-      image: '/images/hemostasis-use-procedure.png',
-      width: 1981,
-      height: 793,
-      alt: '急救止血敷片三步操作示意：拆包取片、揭膜按压和送医后清创去除',
-      steps: [
-        '撕开铝塑包装，取出敷片。',
-        '揭开敷片保护膜，将敷片按压在伤口表面直至出血停止。',
-        '止血后敷片应保留其在创面至送达医院做清创处理时去除。',
-      ],
-    },
+    procedures: [
+      {
+        title: 'Ⅰ型操作步骤',
+        image: '/images/hemostasis-use-procedure.png',
+        width: 1981,
+        height: 793,
+        alt: '急救止血敷片Ⅰ型三步操作示意：拆包取片、揭膜按压和送医后清创去除',
+        steps: [
+          '撕开铝塑包装，取出敷片。',
+          '揭开敷片保护膜，将敷片按压在伤口表面直至出血停止。',
+          '止血后敷片应保留其在创面至送达医院做清创处理时去除。',
+        ],
+      },
+      {
+        title: 'Ⅱ型操作步骤',
+        images: [
+          {
+            src: '/images/pvf-use-step-1.png',
+            alt: '急救止血敷片Ⅱ型：撕开包装并取出敷片',
+            width: 457,
+            height: 472,
+          },
+          {
+            src: '/images/pvf-use-step-2.png',
+            alt: '急救止血敷片Ⅱ型：将敷片按压在伤口表面',
+            width: 439,
+            height: 457,
+          },
+        ],
+        steps: [
+          '撕开铝塑包装，取出敷片。',
+          '揭开敷片保护膜，将敷片按压在伤口表面直至出血停止。',
+          '止血后敷片应保留其在创面至送达医院做清创处理时去除。',
+        ],
+      },
+    ],
   },
   {
     heading: '医保耗材编码',
@@ -298,26 +323,6 @@ const pvfDetails = [
       '可加工成不同形状及规格的产品，以满足不同手术及临床需要。显微外科可使用梭形吸血海绵吸净细小部位的出血',
       '可按临床与使用需求加工成各种型号规格',
     ],
-    procedure: {
-      images: [
-        {
-          src: '/images/pvf-use-step-1.png',
-          alt: '撕开包装并取出 PVF 医用海绵',
-          width: 457,
-          height: 472,
-        },
-        {
-          src: '/images/pvf-use-step-2.png',
-          alt: '将 PVF 医用海绵放置于目标部位',
-          width: 439,
-          height: 457,
-        },
-      ],
-      steps: [
-        '撕开包装，取出 PVF 医用海绵。',
-        '根据临床需要，将 PVF 医用海绵放置于相应部位。',
-      ],
-    },
   },
   {
     heading: '禁忌症',
@@ -561,7 +566,7 @@ function ProductArticle({ type, title, registration, image, imageWebp, imageAlt,
       <details className="product-details">
         <summary>查看完整产品信息 <CaretDown size={18} aria-hidden="true" /></summary>
         <div className="product-detail-grid">
-          {details.map(({ heading, intro, facts: detailFacts, codeGroups, codeRows, groups, procedure, items, ordered, timeline, note, wide }) => (
+          {details.map(({ heading, intro, facts: detailFacts, codeGroups, codeRows, groups, procedures, items, ordered, timeline, note, wide }) => (
             <section className={`product-detail-section ${wide ? 'product-detail-section-wide' : ''}`} key={heading}>
               <h4>{heading}</h4>
               {intro && <p>{intro}</p>}
@@ -622,8 +627,8 @@ function ProductArticle({ type, title, registration, image, imageWebp, imageAlt,
                   ))}
                 </div>
               )}
-              {procedure && (
-                <figure className={`product-procedure ${procedure.images ? 'product-procedure-two-step' : ''}`}>
+              {procedures?.map((procedure) => (
+                <figure className={`product-procedure ${procedure.images ? 'product-procedure-two-step' : ''}`} key={procedure.title}>
                   {procedure.images ? (
                     <div className="product-procedure-images">
                       {procedure.images.map((image) => (
@@ -649,7 +654,7 @@ function ProductArticle({ type, title, registration, image, imageWebp, imageAlt,
                     />
                   )}
                   <figcaption>
-                    <h5>操作步骤</h5>
+                    <h5>{procedure.title}</h5>
                     <ol>
                       {procedure.steps.map((step, index) => (
                         <li key={step}>
@@ -660,7 +665,7 @@ function ProductArticle({ type, title, registration, image, imageWebp, imageAlt,
                     </ol>
                   </figcaption>
                 </figure>
-              )}
+              ))}
               {items && (ordered ? (
                 <ol className="product-detail-list">
                   {items.map((item) => <li key={item}>{item}</li>)}
