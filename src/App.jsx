@@ -47,7 +47,6 @@ const proofItems = [
 ]
 
 const companyHonors = [
-  '获2020年军队科学技术进步奖一等奖（战伤止血）',
   '陕西省科技创新重大项目',
   '陕西省“13115”重大科技项目',
   '国家发改委高技术产业化项目',
@@ -65,17 +64,6 @@ const institutionalDeployments = [
   '陕西省教育厅针对陕西省各学校的安全问题发文推荐',
   '入选陕西省应急配备目录并储备',
   '黑龙江省100个旅游景点应急站配备',
-]
-
-const reliefSupport = [
-  '玉树地震救援捐赠及使用',
-  '雅安地震救援捐赠及使用',
-  '四川甘孜州地震救援捐赠及使用',
-  '河南特大水灾受灾及遇险人员防护捐赠及使用',
-  '新疆武警防护捐赠及使用',
-  '云南、西藏及新疆边防战士防护配备',
-  '云南疫情工作人员防护配备',
-  '陕西曙光救援队太白山远山活动捐赠配备',
 ]
 
 const mechanism = [
@@ -398,7 +386,7 @@ const procurement = [
   {
     year: '2026',
     title: '京津冀止血耗材项目中标全国参与执行',
-    detail: '紧急止血敷片以活性止血海绵独立分组进入京津冀止血耗材集中带量采购项目。',
+    detail: '急救止血敷片以活性止血海绵独立分组进入京津冀止血耗材集中带量采购项目。',
     scope: [
       '急救止血敷片 · PVF医用海绵',
       '均已完成在国家医保公共服务平台全国医疗采购挂网',
@@ -935,7 +923,7 @@ export default function App() {
 
           <div className="about-records" data-reveal>
             <div className="about-subheading">
-              <span className="product-type about-record-product-label">紧急止血敷片</span>
+              <span className="product-type about-record-product-label">急救止血敷片</span>
               <h3>荣誉与公共服务</h3>
               <p>按重大科技项目、国家部门及省级中标列配、灾害救援捐赠三个类别集中呈现。</p>
             </div>
