@@ -194,10 +194,10 @@ const hemostasisDetails = [
             height: 472,
           },
           {
-            src: '/images/pvf-use-step-2.png',
+            src: '/images/hemostasis-type-ii-step-2.png',
             alt: '急救止血敷片Ⅱ型：将敷片按压在伤口表面',
-            width: 439,
-            height: 457,
+            width: 1254,
+            height: 1254,
           },
         ],
         steps: [
@@ -624,6 +624,7 @@ function ProductArticle({ type, title, registration, image, imageWebp, imageAlt,
               )}
               {procedures?.map((procedure) => (
                 <figure className={`product-procedure ${procedure.images ? 'product-procedure-two-step' : ''}`} key={procedure.title}>
+                  <h5>{procedure.title}</h5>
                   {procedure.images ? (
                     <div className="product-procedure-images">
                       {procedure.images.map((image) => (
@@ -649,7 +650,6 @@ function ProductArticle({ type, title, registration, image, imageWebp, imageAlt,
                     />
                   )}
                   <figcaption>
-                    <h5>{procedure.title}</h5>
                     <ol>
                       {procedure.steps.map((step, index) => (
                         <li key={step}>

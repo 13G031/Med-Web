@@ -165,10 +165,10 @@ body .product-type {
   margin-top: 20px;
 }
 
-.product-procedure figcaption > h5 {
+.product-procedure > h5 {
   margin-bottom: 14px;
   color: var(--ink);
-  font-size: 14px;
+  font-size: 18px;
 }
 
 .product-procedure ol {
