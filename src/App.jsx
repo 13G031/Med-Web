@@ -55,15 +55,24 @@ const companyHonors = [
 ]
 
 const institutionalDeployments = [
-  '通过中国人民解放军总后评审及储备',
-  '通过中国人民武警部队评审及配备',
   '通过国家公安部警务列配评审及配备',
   '通过国家应急部评审及陕西消防局配备',
   '通过陕西省公安警务列配目录并配备',
-  '入选国家西部药品动员中心储备目录',
-  '陕西省教育厅针对陕西省各学校的安全问题发文推荐',
   '入选陕西省应急配备目录并储备',
+   '陕西省教育厅针对陕西省各学校的安全问题发文推荐',
   '黑龙江省100个旅游景点应急站配备',
+  '......及其他特殊配备、储备',
+]
+
+const reliefSupport = [
+  '玉树地震救援捐赠及使用',
+  '雅安地震救援捐赠及使用',
+  '四川甘孜州地震救援捐赠及使用',
+  '河南特大水灾受灾及遇险人员防护捐赠及使用',
+  '新疆武警防护捐赠及使用',
+  '云南、西藏及新疆边防战士防护配备',
+  '云南疫情工作人员防护配备',
+  '陕西曙光救援队太白山远山活动捐赠配备',
 ]
 
 const mechanism = [
@@ -126,11 +135,9 @@ const hemostasisDetails = [
       {
         title: 'Ⅱ型（院内临床与手术使用）',
         items: [
-          '1. 门诊急救和术中快速止血；',
-          '2. 外科、骨科手术出血的快速止血；',
-          '3. 颌面外科、口腔、整形科手术出血的快速止血；',
-          '4. 烧伤科、肛肠科手术出血的快速止血；',
-          '5. 手术缝合后体表渗血的出血的止血防粘连及包扎使用'
+          '1. 门诊急救止血；',
+          '2. 手术中快速止血；',
+          '3. 手术缝合后体表渗血的出血的止血防粘连及包扎使用；'
 
         ],
       },
@@ -357,7 +364,7 @@ const humanClinicalEvidence = [
 ]
 
 // 产品上市后在临床中使用的再验征
-const postMarketEvidence = [
+/*const postMarketEvidence = [
   {
     institution: '第四军医大学西京医院 · 骨科 · 切皮压迫皮缘性手术出血的止血',
     result: '3分钟快速止血',
@@ -386,7 +393,7 @@ const postMarketEvidence = [
       ['试用结果', '止血时间1分钟，减少患者出血量，缩短出血时间，减轻常规止血时间长引起的患者紧张压力和吐污不止不停漱口的不便。'],
     ],
   },
-]
+]*/
 
 const evidenceGroupDividerStyle = {
   marginTop: '36px',
@@ -1085,9 +1092,8 @@ export default function App() {
             <div className="clinical-list" data-reveal>
               <EvidenceGroup title="动物实验" items={animalEvidence} />
               <EvidenceGroup title="人体 / 临床实验" items={humanClinicalEvidence} separated />
-              <EvidenceGroup title="产品上市后在临床中使用的再验征" items={postMarketEvidence} separated />
               <aside className="clinical-summary" aria-labelledby="post-market-summary-title">
-                <h4 id="post-market-summary-title">上市后临床使用汇总</h4>
+                <h2 id="post-market-summary-title">产品上市后在临床中使用的再验征</h2>
                 <dl>
                   <div>
                     <dt>延续注册</dt>
