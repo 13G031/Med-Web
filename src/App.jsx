@@ -164,6 +164,42 @@ const hemostasisDetails = [
         ],
       },
     ],
+    procedures: [
+      {
+        title: 'Ⅰ型操作步骤',
+        image: '/images/hemostasis-use-procedure.png',
+        width: 1981,
+        height: 793,
+        alt: '急救止血敷片Ⅰ型三步操作示意：拆包取片、揭膜按压和送医后清创去除',
+        steps: [
+          '撕开铝塑包装，取出敷片。',
+          '揭开敷片保护膜，将敷片按压在伤口表面直至出血停止。',
+          '止血后敷片应保留其在创面至送达医院做清创处理时去除。',
+        ],
+      },
+      {
+        title: 'Ⅱ型操作步骤',
+        images: [
+          {
+            src: '/images/pvf-use-step-1.png',
+            alt: '急救止血敷片Ⅱ型：撕开包装并取出敷片',
+            width: 457,
+            height: 472,
+          },
+          {
+            src: '/images/pvf-use-step-2.png',
+            alt: '急救止血敷片Ⅱ型：将敷片按压在伤口表面',
+            width: 439,
+            height: 457,
+          },
+        ],
+        steps: [
+          '撕开铝塑包装，取出敷片。',
+          '揭开敷片保护膜，将敷片按压在伤口表面直至出血停止。',
+          '止血后敷片应保留其在创面至送达医院做清创处理时去除。',
+        ],
+      },
+    ],
   },
   {
     heading: '医保耗材编码',
@@ -479,10 +515,10 @@ function ProofLedger() {
   )
 }
 
-function ProductArticle({ type, title, registration, image, imageWebp, imageAlt, imageWidth = 1448, imageHeight = 1086, imageFit, imageOverlay, children, facts, details, reverse }) {
+function ProductArticle({ type, title, registration, image, imageWebp, imageAlt, imageWidth = 1448, imageHeight = 1086, imageFit, children, facts, details, reverse }) {
   return (
     <article className={`product-article ${reverse ? 'product-article-reverse' : ''}`} data-reveal>
-      <figure className={`product-visual ${imageFit === 'contain' ? 'product-visual-contained' : ''} ${imageOverlay ? 'product-visual-with-overlay' : ''}`}>
+      <figure className={`product-visual ${imageFit === 'contain' ? 'product-visual-contained' : ''}`}>
         <picture>
           {imageWebp && <source srcSet={imageWebp} type="image/webp" />}
           <img
@@ -494,7 +530,6 @@ function ProductArticle({ type, title, registration, image, imageWebp, imageAlt,
             decoding="async"
           />
         </picture>
-        {imageOverlay}
       </figure>
       <div className="product-copy">
         <div className="product-type">{type}</div>
@@ -519,7 +554,7 @@ function ProductArticle({ type, title, registration, image, imageWebp, imageAlt,
       <details className="product-details">
         <summary>查看完整产品信息 <CaretDown size={18} aria-hidden="true" /></summary>
         <div className="product-detail-grid">
-          {details.map(({ heading, intro, facts: detailFacts, codeGroups, codeRows, groups, items, ordered, timeline, note, wide }) => (
+          {details.map(({ heading, intro, facts: detailFacts, codeGroups, codeRows, groups, procedures, items, ordered, timeline, note, wide }) => (
             <section className={`product-detail-section ${wide ? 'product-detail-section-wide' : ''}`} key={heading}>
               <h4>{heading}</h4>
               {intro && <p>{intro}</p>}
@@ -580,6 +615,45 @@ function ProductArticle({ type, title, registration, image, imageWebp, imageAlt,
                   ))}
                 </div>
               )}
+              {procedures?.map((procedure) => (
+                <figure className={`product-procedure ${procedure.images ? 'product-procedure-two-step' : ''}`} key={procedure.title}>
+                  {procedure.images ? (
+                    <div className="product-procedure-images">
+                      {procedure.images.map((image) => (
+                        <img
+                          key={image.src}
+                          src={image.src}
+                          alt={image.alt}
+                          width={image.width}
+                          height={image.height}
+                          loading="lazy"
+                          decoding="async"
+                        />
+                      ))}
+                    </div>
+                  ) : (
+                    <img
+                      src={procedure.image}
+                      alt={procedure.alt}
+                      width={procedure.width}
+                      height={procedure.height}
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  )}
+                  <figcaption>
+                    <h5>{procedure.title}</h5>
+                    <ol>
+                      {procedure.steps.map((step, index) => (
+                        <li key={step}>
+                          <span>{String(index + 1).padStart(2, '0')}</span>
+                          <p>{step}</p>
+                        </li>
+                      ))}
+                    </ol>
+                  </figcaption>
+                </figure>
+              ))}
               {items && (ordered ? (
                 <ol className="product-detail-list">
                   {items.map((item) => <li key={item}>{item}</li>)}
@@ -985,65 +1059,11 @@ export default function App() {
             type="Ⅲ类医疗器械"
             title="急救止血敷片"
             registration="国械注准20153140973"
-            image="/images/hemostasis-packages-source.png"
+            image="/images/hemostasis-packages-bilingual.png"
             imageFit="contain"
             imageAlt="急救止血敷片包装盒、无菌内袋与止血敷片产品展示"
             imageWidth={1536}
             imageHeight={1024}
-            imageOverlay={(
-              <svg className="product-image-overlay" viewBox="0 0 1536 1024" aria-hidden="true">
-                <defs>
-                  <linearGradient id="red-package-surface" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0" stopColor="#f7f7f7" />
-                    <stop offset="1" stopColor="#eeeeee" />
-                  </linearGradient>
-                  <linearGradient id="blue-package-surface" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0" stopColor="#f5f5f5" />
-                    <stop offset="1" stopColor="#ededed" />
-                  </linearGradient>
-                  <filter id="soft-package-edge" x="-15%" y="-15%" width="130%" height="130%">
-                    <feGaussianBlur stdDeviation="12" />
-                  </filter>
-                  <mask id="red-print-field">
-                    <rect x="96" y="238" width="315" height="242" rx="14" fill="white" filter="url(#soft-package-edge)" />
-                  </mask>
-                  <mask id="blue-print-field">
-                    <rect x="775" y="400" width="310" height="232" rx="14" fill="white" filter="url(#soft-package-edge)" />
-                  </mask>
-                </defs>
-
-                <rect x="82" y="224" width="343" height="270" fill="url(#red-package-surface)" mask="url(#red-print-field)" />
-                <g className="product-package-copy product-package-copy-red">
-                  <text x="118" y="276" className="product-package-logo">安帝源</text>
-                  <text x="119" y="296" className="product-package-latin">andiyuan</text>
-
-                  <text x="120" y="369" className="product-package-title">急救止血敷片</text>
-                  <text x="121" y="407" className="product-package-detail">【医疗器械注册证号】国械注准20153140973</text>
-                  <text x="121" y="433" className="product-package-detail">【发明专利号】ZL 2005 1 0096239.4</text>
-                  <text x="121" y="459" className="product-package-detail">【产品名称】急救止血敷片</text>
-                </g>
-
-                <g className="product-package-footer-red">
-                  <rect x="73" y="562" width="690" height="31" />
-                  <rect x="73" y="562" width="690" height="3" className="product-package-footer-edge" />
-                  <text x="418" y="584">杨凌安帝源生物科技有限公司</text>
-                </g>
-
-                <rect x="761" y="386" width="338" height="260" fill="url(#blue-package-surface)" mask="url(#blue-print-field)" />
-                <g className="product-package-copy product-package-copy-blue">
-                  <text x="799" y="443" className="product-package-logo">安帝源</text>
-                  <text x="800" y="465" className="product-package-latin">andiyuan</text>
-
-                  <text x="800" y="530" className="product-package-title">急救止血敷片</text>
-                  <text x="801" y="566" className="product-package-detail">【医疗器械注册证号】国械注准20153140973</text>
-                  <text x="801" y="592" className="product-package-detail">【发明专利号】ZL 2005 1 0096239.4</text>
-                  <text x="801" y="618" className="product-package-detail">【产品名称】急救止血敷片</text>
-                </g>
-
-                <text x="421" y="698" fontSize="27" className="product-image-overlay-red">Ⅰ类</text>
-                <text x="1091" y="808" fontSize="27" className="product-image-overlay-blue">Ⅱ类</text>
-              </svg>
-            )}
             facts={[
               ['发明专利', 'ZL 2005 1 0096239.4'],
               ['适用方向', '院前急救、急诊、手术创面及穿刺止血'],
