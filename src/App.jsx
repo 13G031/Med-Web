@@ -522,9 +522,9 @@ function ProofLedger() {
   )
 }
 
-function ProductArticle({ type, title, registration, image, imageWebp, imageAlt, imageWidth = 1448, imageHeight = 1086, imageFit, children, facts, details, reverse }) {
+function ProductArticle({ type, title, registration, image, imageWebp, imageAlt, imageWidth = 1448, imageHeight = 1086, imageFit, children, facts, details, interlude, reverse }) {
   return (
-    <article className={`product-article ${reverse ? 'product-article-reverse' : ''}`} data-reveal>
+    <article className={`product-article ${interlude ? 'product-article-has-interlude' : ''} ${reverse ? 'product-article-reverse' : ''}`} data-reveal>
       <figure className={`product-visual ${imageFit === 'contain' ? 'product-visual-contained' : ''}`}>
         <picture>
           {imageWebp && <source srcSet={imageWebp} type="image/webp" />}
@@ -558,6 +558,7 @@ function ProductArticle({ type, title, registration, image, imageWebp, imageAlt,
           获取产品资料 <ArrowRight size={17} aria-hidden="true" />
         </a>
       </div>
+      {interlude && <div className="product-interlude">{interlude}</div>}
       <details className="product-details">
         <summary>查看完整产品信息 <CaretDown size={18} aria-hidden="true" /></summary>
         <div className="product-detail-grid">
@@ -945,7 +946,7 @@ export default function App() {
 
             <figure className="about-campus">
               <img
-                src="/images/company-campus-real-v1.jpg"
+                src="/images/company-campus-real-v2.png"
                 alt="安帝源生物科技园区建筑鸟瞰图"
                 width="1498"
                 height="1050"
@@ -1040,33 +1041,13 @@ export default function App() {
           </div>
         </section>
 
-        <section id="products" className="mechanism-section" aria-labelledby="mechanism-title">
-          <div className="section mechanism-inner" data-reveal>
-            <div className="section-heading section-heading-light">
-              <h2 id="mechanism-title">三重止血功能，叠加互促，共同打开快速止血的凝血键</h2>
-              <p>从调动凝血因子主动快速止血到吸液支撑，产品信息按临床用途和注册类别清晰分列。</p>
-            </div>
-            <ol className="mechanism-flow">
-              {mechanism.map((item, index) => (
-                <li key={item.title}>
-                  <span>{String(index + 1).padStart(2, '0')}</span>
-                  <div>
-                    <h3>{item.title}</h3>
-                    <p>{item.text}</p>
-                  </div>
-                </li>
-              ))}
-            </ol>
-          </div>
-        </section>
-
-        <section className="section products-section">
+        <section id="products" className="section products-section">
 
           <ProductArticle
             type="Ⅲ类医疗器械"
             title="急救止血敷片"
             registration="国械注准20153140973"
-            image="/images/hemostasis-packages-bilingual.png"
+            image="/images/hemostasis-packages-bilingual-type.png"
             imageFit="contain"
             imageAlt="急救止血敷片包装盒、无菌内袋与止血敷片产品展示"
             imageWidth={1536}
@@ -1075,6 +1056,27 @@ export default function App() {
               ['发明专利', 'ZL 2005 1 0096239.4'],
               ['适用方向', '院前急救、急诊、手术创面及穿刺止血'],
             ]}
+            interlude={(
+              <section className="mechanism-section" aria-labelledby="mechanism-title">
+                <div className="section mechanism-inner">
+                  <div className="section-heading section-heading-light">
+                    <h2 id="mechanism-title">三重止血功能，叠加互促，共同打开快速止血的凝血键</h2>
+                    <p>从调动凝血因子主动快速止血到吸液支撑，产品信息按临床用途和注册类别清晰分列。</p>
+                  </div>
+                  <ol className="mechanism-flow">
+                    {mechanism.map((item, index) => (
+                      <li key={item.title}>
+                        <span>{String(index + 1).padStart(2, '0')}</span>
+                        <div>
+                          <h3>{item.title}</h3>
+                          <p>{item.text}</p>
+                        </div>
+                      </li>
+                    ))}
+                  </ol>
+                </div>
+              </section>
+            )}
             details={hemostasisDetails}
           >
             由吸水海绵与生物活性药物组分构成，通过物理吸附、物理压迫及生物活性药物，调动人体自身凝血因子，迅速止血，止血后移除体外，使用安全可靠，无滞留体内继发风险。
