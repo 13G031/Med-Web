@@ -214,12 +214,20 @@ body .question-section {
   display: grid;
   grid-template-columns: minmax(280px, 0.72fr) minmax(0, 1.28fr);
   gap: 0;
-  margin-block: 72px;
+  margin-block: 32px 72px;
   padding: 0;
   overflow: hidden;
   border-radius: var(--radius);
   background: var(--surface);
   box-shadow: var(--shadow);
+}
+
+body .products-section-final {
+  padding-bottom: 24px;
+}
+
+.products-section-final .product-article {
+  margin-bottom: 0;
 }
 
 .question-intro {
@@ -317,7 +325,7 @@ body .question-form {
 
   body .question-section {
     grid-template-columns: 1fr;
-    margin-block: 56px;
+    margin-block: 32px 56px;
   }
 
   .question-intro,
@@ -333,7 +341,7 @@ body .question-form {
 
 @media (max-width: 560px) {
   body .question-section {
-    margin-block: 44px;
+    margin-block: 28px 44px;
   }
 
   .question-intro,
